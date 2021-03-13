@@ -1,17 +1,16 @@
-// import SunCalc from "suncalc"
+import SunCalc from "suncalc"
 
-// const getTime = () => {
+const getSunPos = (date) => {
+  console.log('DatePicker:', date)
+  console.log(SunCalc.getPosition(date, 10.757, 59.91).altitude * 180 / Math.PI)
+  const dateString = String(date)
+  console.log(dateString)
+ }
+
+// for(let i = 0; i <24; i++){
 
 // }
-
-// const getData = () => {
   
-// }
-const calc = (a, b) => {
-  console.log(a*b)
-  return a * b
-}
-
 const data =  [
   {
     "id": "japan",
@@ -70,4 +69,4 @@ const data =  [
 ]
 
 
-export {data, calc}
+export {data, getSunPos }

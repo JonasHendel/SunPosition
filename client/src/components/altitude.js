@@ -1,4 +1,5 @@
 import { ResponsiveLine } from '@nivo/line'
+import SunCalc from 'suncalc'
 
 import React from 'react'
 import {data} from '../data/altitudeData'
