@@ -14,18 +14,19 @@ import {getSunPos} from './data/altitudeData'
 
 function App() {
 
-  const [lat, setLat] = useState(4)
+  const [latitude, setLat] = useState(59.911491)
+  const [longitude, setLong] = useState(10.757933)
   const [date, setDate] = useState(new Date())
 
   // useEffect whenever input is changed => reload Graph
 
-  getSunPos(date)
+  getSunPos(date, longitude, latitude)
 
   return (
     <div className='App'>
-      <input value={lat} onChange={(e) => {setLat(e.target.value)}} placeholder='latitude'></input>
+      <input value={latitude} onChange={(e) => {setLat(e.target.value)}} placeholder='latitude'></input>
       
-      <input placeholder='longitude'></input>
+      <input value={longitude} onChange={(e) => {setLong(e.target.value)}}  placeholder='longitude'></input>
       <div className='date_picker'>
         <DatePicker onChange={setDate} value={date}></DatePicker>
       </div>

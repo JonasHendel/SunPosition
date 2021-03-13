@@ -1,15 +1,16 @@
 import SunCalc from "suncalc"
 
-const getSunPos = (date) => {
-  console.log('DatePicker:', date)
-  console.log(SunCalc.getPosition(date, 10.757, 59.91).altitude * 180 / Math.PI)
-  const dateString = String(date)
-  console.log(dateString)
- }
+const getSunPos = (date, latitude, longitude) => {
+  let dayString = String(date).substring(0,16)
 
-// for(let i = 0; i <24; i++){
+  for(let i = 0; i <24; i++){
+    let finalDate = new Date(dayString+i+':00:00 GMT+0100')
+    var altitude = SunCalc.getPosition(finalDate, latitude, longitude).altitude * 180 / Math.PI
+    console.log(altitude, i)
+  }
+}
 
-// }
+
   
 const data =  [
   {
