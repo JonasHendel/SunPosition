@@ -1,73 +1,39 @@
 import SunCalc from "suncalc"
 
-const getSunPos = (date, latitude, longitude) => {
-  let dayString = String(date).substring(0,16)
 
-  for(let i = 0; i <24; i++){
-    let finalDate = new Date(dayString+i+':00:00 GMT+0100')
-    var altitude = SunCalc.getPosition(finalDate, latitude, longitude).altitude * 180 / Math.PI
-    console.log(altitude, i)
+const getAltitude = (date, latitude, longitude) => {
+
+  class Data{
+    constructor(i, a){
+      this.x=i
+      this.y=a
+    }
+    data() {
+      return {
+        data:
+        {x:this.x,y:this.y}
+      }
+    }
   }
+  
+  const getSunPos = () => {
+    let data = []
+    for(let i = 0; i <=24; i++){
+      var altitude = SunCalc.getPosition(date.setHours(i, 0, 0), latitude, longitude).altitude * 180 / Math.PI
+      let temp = new Data(i, altitude)
+      data.push(temp.data().data)
+    }
+    return data
+  }
+  
+  var dataObj = [
+    {
+      id: 'Altitude',
+      color: 'hsl(39, 100%, 50%)',
+      data: getSunPos(),
+    },
+  ]
+  return dataObj
 }
 
-
-  
-const data =  [
-  {
-    "id": "japan",
-    "color": "hsl(231, 70%, 50%)",
-    "data": [
-      {
-        "x": "plane",
-        "y": 28
-      },
-      {
-        "x": "helicopter",
-        "y": 251
-      },
-      {
-        "x": "boat",
-        "y": 231
-      },
-      {
-        "x": "train",
-        "y": 161
-      },
-      {
-        "x": "subway",
-        "y": 89
-      },
-      {
-        "x": "bus",
-        "y": 123
-      },
-      {
-        "x": "car",
-        "y": 269
-      },
-      {
-        "x": "moto",
-        "y": 0
-      },
-      {
-        "x": "bicycle",
-        "y": 239
-      },
-      {
-        "x": "horse",
-        "y": 158
-      },
-      {
-        "x": "skateboard",
-        "y": 273
-      },
-      {
-        "x": "others",
-        "y": 274
-      }
-    ]
-  }
-]
-
-
-export {data, getSunPos }
+export {getAltitude}
