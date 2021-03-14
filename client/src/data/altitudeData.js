@@ -3,6 +3,8 @@ import SunCalc from "suncalc"
 
 const getAltitude = (date, latitude, longitude) => {
 
+
+  
   class Data{
     constructor(i, a){
       this.x=i

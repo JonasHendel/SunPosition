@@ -1,6 +1,6 @@
 import './App.css';
 import '../node_modules/react-vis/dist/style.css';
-import {React, useState, useEffect} from 'react'
+import {React, useState} from 'react'
 import DatePicker from 'react-date-picker'
 import './Calendar.css'
 import './DatePicker.css'
@@ -8,6 +8,7 @@ import './DatePicker.css'
 
 // Components
 import AltitudeChart from './components/altitude';
+import AzimuthChart from './components/azimuth'
 
 //Functions
 
@@ -27,8 +28,11 @@ function App() {
       <div style={{height:500}}>
         <AltitudeChart latitude={latitude} longitude={longitude} date={date}/>
       </div>
+      <div>
+        <AzimuthChart latitude={latitude} longitude={longitude} date={date}/>
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;

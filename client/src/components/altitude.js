@@ -1,10 +1,9 @@
 import { ResponsiveLine } from '@nivo/line';
-import SunCalc from 'suncalc';
 
 import React from 'react';
 import { getAltitude } from '../data/altitudeData';
 
-const Line = (props) => {
+const AltitudeChart = (props) => {
 	return (
 		<ResponsiveLine
 			data={getAltitude(props.date, props.latitude, props.longitude)}
@@ -44,7 +43,7 @@ const Line = (props) => {
 			pointBorderWidth={2}
 			pointBorderColor={{ from: 'serieColor' }}
 			pointLabelYOffset={-12}
-			enableArea={false}
+			enableArea={true}
 			areaOpacity={0.35}
 			useMesh={true}
       markers={[
@@ -54,24 +53,24 @@ const Line = (props) => {
           lineStyle: { stroke: '0413e', strokeWidth: 2 },
         }
       ]}
-      theme={{
-        axis: {
-          ticks: {
-            line: {
-              stroke: "green"
-            },
-            text: {
-              fill: "red"
-            }
-          }
-        },
-        grid: {
-          line: {
-            stroke: 'black'
-          }
-        }
-      }
-      }
+      // theme={{
+      //   axis: {
+      //     ticks: {
+      //       line: {
+      //         stroke: "green"
+      //       },
+      //       text: {
+      //         fill: "red"
+      //       }
+      //     }
+      //   },
+      //   grid: {
+      //     line: {
+      //       STROKE: 'BLACK'
+      //     }
+      //   }
+      // }
+      // }
 			legends={[
 				{
 					anchor: 'bottom-right',
@@ -102,4 +101,4 @@ const Line = (props) => {
 	);
 };
 
-export default Line;
+export default AltitudeChart;
