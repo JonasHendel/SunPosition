@@ -16,7 +16,7 @@ const getAltitude = (date, latitude, longitude) => {
     }
   }
   
-  const getSunPos = () => {
+  const calcPos= () => {
     let data = []
     for(let i = 0; i <=24; i++){
       var altitude = SunCalc.getPosition(date.setHours(i, 0, 0), latitude, longitude).altitude * 180 / Math.PI
@@ -30,7 +30,7 @@ const getAltitude = (date, latitude, longitude) => {
     {
       id: 'Altitude',
       color: 'hsl(39, 100%, 50%)',
-      data: getSunPos(),
+      data: calcPos(),
     },
   ]
   return dataObj

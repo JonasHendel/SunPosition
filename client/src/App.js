@@ -10,20 +10,12 @@ import './DatePicker.css'
 import AltitudeChart from './components/altitude';
 
 //Functions
-import {getData} from './data/altitudeData'
-
-
 
 function App() {
 
   const [latitude, setLat] = useState(59.911491)
   const [longitude, setLong] = useState(10.757933)
   const [date, setDate] = useState(new Date())
-
-  // useEffect whenever input is changed => reload Graph
-  useEffect(() => {
-    getData(date, longitude, latitude) 
-  })
 
   return (
     <div className='App'>
