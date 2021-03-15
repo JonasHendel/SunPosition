@@ -18,23 +18,34 @@ const AzimuthChart = (props) => {
   const [x2, setX2] = useState(0)
 
   useEffect(()=>{
-    setY1(Math.sin(90 * Math.PI / 180 + sunriseAzi)*50 + 200)
-    setX1(Math.cos(90 * Math.PI /180 + sunriseAzi)*50 + 400)
+    setY1(Math.sin(90 * Math.PI / 180 + sunriseAzi)*250 + 300)
+    setX1(Math.cos(90 * Math.PI /180 + sunriseAzi)*250 + 400)
   
-    setY2(Math.sin(90 * Math.PI / 180 + sunsetAzi)*50 + 200)
-    setX2(Math.cos(90 * Math.PI /180 + sunsetAzi)*50 + 400)
+    setY2(Math.sin(90 * Math.PI / 180 + sunsetAzi)*250 + 300)
+    setX2(Math.cos(90 * Math.PI /180 + sunsetAzi)*250 + 400)
   })
 
-  const path = 'M '+x2+' '+y2+' A 50 50 0 1 0 '+x1+' '+y1+' L 400 200 Z'
+  const path = 'M '+x2+' '+y2+' A 250 250 0 1 0 '+x1+' '+y1+' L 400 300 Z'
   return (
-    <div className="App">
-      <svg preserveAspectRatio="xMidYMin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+    <div>
+      <svg preserveAspectRatio="xMidYMin" xmlns="http://www.w3.org/3000/svg" viewBox="0 0 800 600">
       <clipPath id='circle'>
-          <circle cx="400" cy="200" r="50"/>
+          <circle cx="400" cy="300" r="250"/>
       </clipPath>
-        <g clipPath='url(#circle)'> 
-          <circle cx="400" cy="200" r="50"/>
-          <path d={path} fill='red'/>
+        <g clipPath='url(#circle)'>
+        <linearGradient id="myGradient" gradientTransform="rotate(90)">
+      <stop offset="1%"  stop-color="gold" />
+      <stop offset="100%" stop-color="#ed673b" />
+    </linearGradient>
+          <circle cx="400" cy="300" r="250" fill='gray'/>
+          <path d={path} fill='url(#myGradient)' stroke='black' stroke-width='2.5'/>
+          <circle cx='400' cy='300' r='250' stroke-width='5' stroke='black' fillOpacity='0'/>
+        </g>
+        <g>
+          <text x='394' y="48" fill="black">O</text>
+          <text x='394' y="563" fill="black">S</text>
+          <text x='134' y="306" fill="black">W</text>
+          <text x='651' y="306" fill="black">E</text>
         </g>
       </svg>
       

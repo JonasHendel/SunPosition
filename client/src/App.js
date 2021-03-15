@@ -17,19 +17,25 @@ function App() {
   const [latitude, setLat] = useState(59.911491)
   const [longitude, setLong] = useState(10.757933)
   const [date, setDate] = useState(new Date())
+  
+  console.log(window.innerHeight)
 
   return (
     <div className='App'>
-      <div className='input-div'>
-        <input className='input' value={latitude} onChange={(e) => {setLat(e.target.value)}} placeholder='latitude'></input>
-        <input className='input' value={longitude} onChange={(e) => {setLong(e.target.value)}}  placeholder='longitude'></input>
-        <DatePicker onChange={setDate} value={date}></DatePicker>
-      </div>
-      <div style={{height:500}}>
-        <AltitudeChart latitude={latitude} longitude={longitude} date={date}/>
-      </div>
-      <div>
-        <AzimuthChart latitude={latitude} longitude={longitude} date={date}/>
+      <div className='card'>
+        <div className='input-div'>
+          <input className='input' value={latitude} onChange={(e) => {setLat(e.target.value)}} placeholder='latitude'></input>
+          <input className='input' value={longitude} onChange={(e) => {setLong(e.target.value)}}  placeholder='longitude'></input>
+          <DatePicker onChange={setDate} value={date}></DatePicker>
+        </div>
+        <div className='graph'>
+          <div className='altchar'>
+            <AltitudeChart latitude={latitude} longitude={longitude} date={date}/>
+          </div>
+          <div>
+            <AzimuthChart latitude={latitude} longitude={longitude} date={date}/>
+          </div>
+        </div>
       </div>
     </div>
   )

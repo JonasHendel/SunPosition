@@ -13,7 +13,7 @@ const getAltitude = (date, latitude, longitude) => {
     data() {
       return {
         data:
-        {x:this.x,y:this.y}
+        {x:this.x, y:this.y}
       }
     }
   }

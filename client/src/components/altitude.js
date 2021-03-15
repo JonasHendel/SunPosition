@@ -7,8 +7,8 @@ const AltitudeChart = (props) => {
 	return (
 		<ResponsiveLine
 			data={getAltitude(props.date, props.latitude, props.longitude)}
-			margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
-			xScale={{ type: 'point' }}
+			margin={{ top: 50, right: 60, bottom: 50, left: 60 }}
+			xScale={{ type: 'linear' }}
 			yScale={{
 				type: 'linear',
 				min: 'auto',
@@ -26,6 +26,7 @@ const AltitudeChart = (props) => {
 				tickRotation: 0,
 				legendOffset: 36,
 				legendPosition: 'middle',
+        stroke:'black'
 			}}
 			axisLeft={{
 				orient: 'left',
@@ -46,57 +47,38 @@ const AltitudeChart = (props) => {
 			enableArea={true}
 			areaOpacity={0.35}
 			useMesh={true}
+      enableGridX={false}
+      enableGridY={false}
       markers={[
         {
           axis: "y",
           value: 0,
           lineStyle: { stroke: '0413e', strokeWidth: 2 },
+        },
+        {
+          axis: 'x',
+          value: 0,
+          lineStyle: { stroke: '0413e', strokeWidth: 2}
+          
+
         }
       ]}
-      // theme={{
-      //   axis: {
-      //     ticks: {
-      //       line: {
-      //         stroke: "green"
-      //       },
-      //       text: {
-      //         fill: "red"
-      //       }
-      //     }
-      //   },
-      //   grid: {
-      //     line: {
-      //       STROKE: 'BLACK'
-      //     }
-      //   }
-      // }
-      // }
-			legends={[
-				{
-					anchor: 'bottom-right',
-					direction: 'column',
-					justify: false,
-					translateX: 100,
-					translateY: 0,
-					itemsSpacing: 0,
-					itemDirection: 'left-to-right',
-					itemWidth: 80,
-					itemHeight: 20,
-					itemOpacity: 0.75,
-					symbolSize: 12,
-					symbolShape: 'circle',
-					symbolBorderColor: 'rgba(0, 0, 0, .5)',
-					effects: [
-						{
-							on: 'hover',
-							style: {
-								itemBackground: 'rgba(0, 0, 0, .03)',
-								itemOpacity: 1,
-							},
-						},
-					],
-				},
-			]}
+      theme={{
+        fontFamily: 'Merriweather Sans',
+        axis: {
+          ticks: {
+            line: {
+              stroke: "noneblack"
+            }
+          }
+        },
+        grid: {
+          line: {
+            stroke: 'green'
+          }
+        }
+      }
+      }
 		/>
 	);
 };
