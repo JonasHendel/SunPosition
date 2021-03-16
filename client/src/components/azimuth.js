@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react/cjs/react.development'
 
-import './azimuth.css'
+import '../css/app.css'
 
 import SunCalc from 'suncalc'
 
@@ -18,19 +18,23 @@ const AzimuthChart = (props) => {
   const [x1, setX1] = useState(0)
   const [y2, setY2] = useState(0)
   const [x2, setX2] = useState(0)
-
+  
   useEffect(()=>{
     setY1(Math.sin(90 * Math.PI / 180 + sunriseAzi)*250 + 300)
     setX1(Math.cos(90 * Math.PI /180 + sunriseAzi)*250 + 400)
   
     setY2(Math.sin(90 * Math.PI / 180 + sunsetAzi)*250 + 300)
     setX2(Math.cos(90 * Math.PI /180 + sunsetAzi)*250 + 400)
-  })
+  },[sunriseAzi, sunsetAzi])
+
+
+  
 
   const path = 'M '+x2+' '+y2+' A 250 250 0 1 0 '+x1+' '+y1+' L 400 300 Z'
+
   return (
-    <div className='azichar'>
-      <svg preserveAspectRatio="xMidYMin" xmlns="http://www.w3.org/3000/svg" viewBox="0 0 800 600">
+    <div className='azichart'> 
+      <svg className='svg' viewBox="0 0 800 600">
       <clipPath id='circle'>
           <circle cx="400" cy="300" r="250"/>
       </clipPath>
