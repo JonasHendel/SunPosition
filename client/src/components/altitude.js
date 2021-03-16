@@ -11,8 +11,8 @@ const AltitudeChart = (props) => {
 			xScale={{ type: 'linear' }}
 			yScale={{
 				type: 'linear',
-				min: 'auto',
-				max: 'auto',
+				min: props.min,
+				max: props.max,
 				stacked: true,
 				reverse: false,
 			}}
@@ -47,8 +47,8 @@ const AltitudeChart = (props) => {
 			enableArea={true}
 			areaOpacity={0.35}
 			useMesh={true}
-      enableGridX={false}
-      enableGridY={false}
+      enableGridX={true}
+      enableGridY={true}
       markers={[
         {
           axis: "y",
@@ -65,18 +65,18 @@ const AltitudeChart = (props) => {
       ]}
       theme={{
         fontFamily: 'Merriweather Sans',
-        axis: {
-          ticks: {
-            line: {
-              stroke: "noneblack"
-            }
-          }
-        },
-        grid: {
-          line: {
-            stroke: 'green'
-          }
-        }
+        // axis: {
+        //   ticks: {
+        //     line: {
+        //       stroke: "noneblack"
+        //     }
+        //   }
+        // },
+        // grid: {
+        //   line: {
+        //     stroke: 'green'
+        //   }
+        // }
       }
       }
 		/>

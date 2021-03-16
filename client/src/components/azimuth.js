@@ -1,6 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react/cjs/react.development'
 
+import './azimuth.css'
+
 import SunCalc from 'suncalc'
 
 const AzimuthChart = (props) => {
@@ -27,7 +29,7 @@ const AzimuthChart = (props) => {
 
   const path = 'M '+x2+' '+y2+' A 250 250 0 1 0 '+x1+' '+y1+' L 400 300 Z'
   return (
-    <div>
+    <div className='azichar'>
       <svg preserveAspectRatio="xMidYMin" xmlns="http://www.w3.org/3000/svg" viewBox="0 0 800 600">
       <clipPath id='circle'>
           <circle cx="400" cy="300" r="250"/>
@@ -37,15 +39,15 @@ const AzimuthChart = (props) => {
       <stop offset="1%"  stop-color="gold" />
       <stop offset="100%" stop-color="#ed673b" />
     </linearGradient>
-          <circle cx="400" cy="300" r="250" fill='gray'/>
-          <path d={path} fill='url(#myGradient)' stroke='black' stroke-width='2.5'/>
-          <circle cx='400' cy='300' r='250' stroke-width='5' stroke='black' fillOpacity='0'/>
+          <circle cx="400" cy="300" r="250" fill='white'/>
+          <path d={path} fill='#ed673b' stroke='black' stroke-width='7.5'/> {/* fill='url(#myGradient)' */}
+          <circle cx='400' cy='300' r='250' stroke-width='15' stroke='black' fillOpacity='0'/>
         </g>
-        <g>
-          <text x='394' y="48" fill="black">O</text>
-          <text x='394' y="563" fill="black">S</text>
-          <text x='134' y="306" fill="black">W</text>
-          <text x='651' y="306" fill="black">E</text>
+        <g className='text'>
+          <text x='383' y="45" fill="black">O</text>
+          <text x='383' y="593" fill="black">S</text>
+          <text x='100' y="317" fill="black">W</text>
+          <text x='650' y="317" fill="black">E</text>
         </g>
       </svg>
       

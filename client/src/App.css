@@ -2,24 +2,24 @@
   display: flex;
   justify-content: center;
   height: 100vh;
-  align-items: center;
   background: #152a56;
 }
 
 .card{
-  width: 50vh;
-  height: 75vh;
+  margin-top: 10px;
+  width: 30%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   background: white;
   border-radius: 10px;
-  padding: 50px 80px 100px;
+  margin-bottom: 100px;
 }
 
 .graph {
-  height: 75vh;
-  width: 50vh;
-  outline: 2px dashed black;
+  height: 100%;
+  /* outline: 2px dashed black; */
+  align-items: center;
 }
 
 .input-div {
@@ -31,12 +31,11 @@
   padding: 6px 0 5px;
   border-radius: 7px;
   margin-right: 5px;
-  margin-bottom: 50px;
+  font-style: bold;
 }
 
-
 .altchar{
-  height: 30vh;
+  height: 50%;
   display: flex;
   justify-content: center;
 
