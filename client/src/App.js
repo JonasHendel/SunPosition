@@ -14,7 +14,6 @@ import AltitudeChart from './components/altitude';
 import AzimuthChart from './components/azimuth'
 
 //Functions
-
 function App() {
 
   const [latitude, setLat] = useState(59.911491)
