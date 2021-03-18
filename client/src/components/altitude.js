@@ -66,18 +66,6 @@ const AltitudeChart = (props) => {
       ]}
       theme={{
         fontFamily: 'Merriweather Sans',
-        // axis: {
-        //   ticks: {
-        //     line: {
-        //       stroke: "noneblack"
-        //     }
-        //   }
-        // },
-        // grid: {
-        //   line: {
-        //     stroke: 'green'
-        //   }
-        // }
       }
       }
 		/>
