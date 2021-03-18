@@ -16,8 +16,6 @@ function App() {
 	const [lat, setLat] = useState();
 	const [long, setLong] = useState();
 
-  console.log(date)
-
 	const addressToLatitude = () => {
 		const apiUrl =
 			'https://api.opencagedata.com/geocode/v1/json?q=' +
