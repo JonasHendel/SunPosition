@@ -4,6 +4,7 @@ import React from 'react';
 import { getAltitude } from '../data/altitudeData';
 
 const AltitudeChart = (props) => {
+  console.log(getAltitude(props.date, props.latitude, props.longitude))
 	return (
 		<ResponsiveLine
 			data={getAltitude(props.date, props.latitude, props.longitude)}
@@ -65,18 +66,6 @@ const AltitudeChart = (props) => {
       ]}
       theme={{
         fontFamily: 'Merriweather Sans',
-        // axis: {
-        //   ticks: {
-        //     line: {
-        //       stroke: "noneblack"
-        //     }
-        //   }
-        // },
-        // grid: {
-        //   line: {
-        //     stroke: 'green'
-        //   }
-        // }
       }
       }
 		/>

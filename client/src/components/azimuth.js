@@ -40,12 +40,12 @@ const AzimuthChart = (props) => {
       </clipPath>
         <g clipPath='url(#circle)'>
         <linearGradient id="myGradient" gradientTransform="rotate(90)">
-      <stop offset="1%"  stop-color="gold" />
-      <stop offset="100%" stop-color="#ed673b" />
+      <stop offset="1%"  stopColor="gold" />
+      <stop offset="100%" stopColor="#ed673b" />
     </linearGradient>
           <circle cx="400" cy="300" r="250" fill='white'/>
-          <path d={path} fill='#ed673b' stroke='black' stroke-width='7.5'/> {/* fill='url(#myGradient)' */}
-          <circle cx='400' cy='300' r='250' stroke-width='15' stroke='black' fillOpacity='0'/>
+          <path d={path} fill='#ed673b' stroke='black' strokeWidth='7.5'/> {/* fill='url(#myGradient)' */}
+          <circle cx='400' cy='300' r='250' strokeWidth='15' stroke='black' fillOpacity='0'/>
         </g>
         <g className='text'>
           <text x='383' y="45" fill="black">O</text>
