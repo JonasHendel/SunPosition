@@ -7,7 +7,6 @@ import 'react-datepicker/dist/react-datepicker.css';
 // CSS
 import './css/app.css';
 
-
 // Components
 import AltitudeChart from './components/altitude';
 import AzimuthChart from './components/azimuth';
@@ -17,7 +16,6 @@ function App() {
 	const [date, setDate] = useState(new Date());
 	const [lat, setLat] = useState();
 	const [long, setLong] = useState();
-
 
 	const addressToLatitude = () => {
 		const apiUrl =
