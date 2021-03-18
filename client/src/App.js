@@ -1,3 +1,4 @@
+
 import 'react-vis/dist/style.css';
 import { React, useState } from 'react';
 import DatePicker from 'react-datepicker';
@@ -5,6 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 // CSS
 import './css/app.css';
+
 
 // Components
 import AltitudeChart from './components/altitude';
@@ -16,7 +18,6 @@ function App() {
 	const [lat, setLat] = useState();
 	const [long, setLong] = useState();
 
-	console.log(date);
 
 	const addressToLatitude = () => {
 		const apiUrl =
@@ -53,6 +54,7 @@ function App() {
 				<div className='input-div'>
 					<input
 						className='input'
+
 						type='text'
 						value={address}
 						onChange={(e) => {
@@ -95,13 +97,15 @@ function App() {
 					<button
 						className='btn'
 						type='submit'
+
 						onClick={() => {
 							addressToLatitude();
 						}}
 					>
 						Go!
 					</button>
-				</div>{' '}
+
+				</div>
 				{lat && (
 					<div className='graph'>
 						<div className='altchar'>

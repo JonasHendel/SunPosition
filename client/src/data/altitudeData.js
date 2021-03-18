@@ -13,8 +13,7 @@ const getAltitude = (date, latitude, longitude) => {
         {x:this.x, y:this.y}
       }
     }
-  }
-
+  
   let dayString = String(date).substring(0,16)
   const calcPos= () => {
     let data = []

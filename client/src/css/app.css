@@ -32,13 +32,21 @@ body {
 
 .input {
   padding: 6px 5px 5px;
-  border-radius: 7px;
   margin-right: 5px;
   font-style: bold;
   font-size: 16px;
   width: 80px;
   height: 20px;
+
+  background-color:  white; /* Green */
+  color: black;
+  border: 1px solid black;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
 }
+
 
 .altchar{
   height: 20vw;
@@ -74,7 +82,8 @@ button {
   border-radius: 10px;
 }
 
-.btn:active{
+
+button:active{
   background-color: black;
   color: white;
 }
