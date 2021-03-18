@@ -74,6 +74,11 @@ button {
   border-radius: 10px;
 }
 
+.btn:active{
+  background-color: black;
+  color: white;
+}
+
 .button-div {
   text-align: center;
 }

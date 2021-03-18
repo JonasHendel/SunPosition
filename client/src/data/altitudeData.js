@@ -2,9 +2,6 @@ import SunCalc from "suncalc"
 
 
 const getAltitude = (date, latitude, longitude) => {
-
-
-  
   class Data{
     constructor(i, a){
       this.x=i
@@ -17,11 +14,13 @@ const getAltitude = (date, latitude, longitude) => {
       }
     }
   }
-  
+
+  let dayString = String(date).substring(0,16)
   const calcPos= () => {
     let data = []
-    for(let i = 0; i <=24; i++){
-      var altitude = SunCalc.getPosition(date.setHours(i, 0, 0), latitude, longitude).altitude * 180 / Math.PI
+    for(let i = 0; i<24; i++){
+      let finalDate = new Date(dayString+i+':00:00 GMT+0100')
+      var altitude = SunCalc.getPosition(finalDate, latitude, longitude).altitude * 180 / Math.PI
       let temp = new Data(i, altitude)
       data.push(temp.data().data)
     }

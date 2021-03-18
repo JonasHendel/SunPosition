@@ -1,10 +1,10 @@
-import '../node_modules/react-vis/dist/style.css';
+import 'react-vis/dist/style.css';
 import { React, useState } from 'react';
 import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
+import 'react-datepicker/dist/react-datepicker.css';
 
 // CSS
-import './css/app.css'
+import './css/app.css';
 
 // Components
 import AltitudeChart from './components/altitude';
@@ -16,7 +16,7 @@ function App() {
 	const [lat, setLat] = useState();
 	const [long, setLong] = useState();
 
-  console.log(date)
+	console.log(date);
 
 	const addressToLatitude = () => {
 		const apiUrl =
@@ -53,33 +53,56 @@ function App() {
 				<div className='input-div'>
 					<input
 						className='input'
-            type='text'
+						type='text'
 						value={address}
-            onChange={(e) => {
+						onChange={(e) => {
 							setAddress(e.target.value);
-              console.log(e.target.value)
+							console.log(e.target.value);
 						}}
-						placeholder='latitude'/>
-          <DatePicker type='date' selected={date} onChange={date => setDate(date)}/>
+						placeholder='latitude'
+					/>
+					<DatePicker
+						type='date'
+						selected={date}
+						onChange={(date) => setDate(date)}
+					/>
 				</div>
 				<div className='button-div'>
-					<button type='button' onClick={clickHandler} value='60'>
+					<button
+						className='btn'
+						type='button'
+						onClick={clickHandler}
+						value='60'
+					>
 						60
 					</button>
-					<button type='button' onClick={clickHandler} value='90'>
+					<button
+						className='btn'
+						type='button'
+						onClick={clickHandler}
+						value='90'
+					>
 						90
 					</button>
-					<button className='btn' type='button' onClick={clickHandlerAuto} value='auto'>
+					<button
+						className='btn'
+						type='button'
+						onClick={clickHandlerAuto}
+						value='auto'
+					>
 						AUTO
 					</button>
 					<button
+						className='btn'
+						type='submit'
 						onClick={() => {
 							addressToLatitude();
 						}}
 					>
 						Go!
 					</button>
-				</div> {lat && (
+				</div>{' '}
+				{lat && (
 					<div className='graph'>
 						<div className='altchar'>
 							<AltitudeChart
