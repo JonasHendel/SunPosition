@@ -14,13 +14,11 @@ const getAltitude = (date, latitude, longitude) => {
       }
     }
   }
-
+  
   let dayString = String(date).substring(0,16)
-
   const calcPos= () => {
     let data = []
-    for(let i = 0; i <=24; i++){
-
+    for(let i = 0; i <24; i++){
       let finalDate = new Date(dayString+i+':00:00 GMT+0100')
       var altitude = SunCalc.getPosition(finalDate, latitude, longitude).altitude * 180 / Math.PI
       let temp = new Data(i, altitude)

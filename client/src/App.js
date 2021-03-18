@@ -13,8 +13,8 @@ import AzimuthChart from './components/azimuth';
 function App() {
 	const [address, setAddress] = useState('Oslo');
 	const [date, setDate] = useState(new Date());
-	const [lat, setLat] = useState(59);
-	const [long, setLong] = useState(10);
+	const [lat, setLat] = useState();
+	const [long, setLong] = useState();
 
   console.log(date)
 
@@ -61,14 +61,6 @@ function App() {
 						}}
 						placeholder='latitude'/>
           <DatePicker type='date' selected={date} onChange={date => setDate(date)}/>
-					<button
-          type='submit'
-						onClick={() => {
-							addressToLatitude();
-						}}
-					>
-						Go!
-					</button>
 				</div>
 				<div className='button-div'>
 					<button type='button' onClick={clickHandler} value='60'>
@@ -77,8 +69,15 @@ function App() {
 					<button type='button' onClick={clickHandler} value='90'>
 						90
 					</button>
-					<button type='button' onClick={clickHandlerAuto} value='auto'>
+					<button className='btn' type='button' onClick={clickHandlerAuto} value='auto'>
 						AUTO
+					</button>
+					<button
+						onClick={() => {
+							addressToLatitude();
+						}}
+					>
+						Go!
 					</button>
 				</div> {lat && (
 					<div className='graph'>
