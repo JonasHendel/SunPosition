@@ -29,6 +29,7 @@ function App() {
 				const long = data.results[0].geometry.lng;
 				setLat(lat);
 				setLong(long);
+        console.log(lat, long)
 			})
 			.catch((error) => console.log(error));
 	};

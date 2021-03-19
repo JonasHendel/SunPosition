@@ -38,7 +38,20 @@ const AzimuthChart = (props) => {
 
 		setY2(Math.sin((90 * Math.PI) / 180 + sunsetAzi) * 250 + 300);
 		setX2(Math.cos((90 * Math.PI) / 180 + sunsetAzi) * 250 + 400);
-	}, [sunriseAzi, sunsetAzi]);
+	}, [sunsetAzi, sunriseAzi]);
+
+  if(!x2){
+    setX2(2)
+  }
+  if(!x1){
+    setX1(2)
+  }
+  if(!y1){
+    setY1(2)
+  }
+  if(!y2){
+    setY2(2)
+  }
 
 	const path =
 		'M ' +
@@ -55,50 +68,50 @@ const AzimuthChart = (props) => {
 		<div className='azichart'>
 			<svg className='svg' viewBox='0 0 800 600'>
 				<clipPath id='circle'>
-					<circle cx='400' cy='300' r='250' />
-				</clipPath>
-				<g clipPath='url(#circle)'>
-					<linearGradient
-						id='myGradient'
-						gradientTransform='rotate(90)'
-					>
-						<stop offset='1%' stopColor='gold' />
-						<stop offset='100%' stopColor='#ed673b' />
-					</linearGradient>
-					<circle cx='400' cy='300' r='250' fill='white' />
-					<path
-						d={path}
-						fill='#ed673b'
-						stroke='black'
-						strokeWidth='7.5'
-					/>{' '}
-					{/* fill='url(#myGradient)' */}
-					<circle
-						cx='400'
-						cy='300'
-						r='250'
-						strokeWidth='15'
-						stroke='black'
-						fillOpacity='0'
-					/>
-				</g>
-				<g className='text'>
-					<text x='383' y='45' fill='black'>
-						O
-					</text>
-					<text x='383' y='593' fill='black'>
-						S
-					</text>
-					<text x='100' y='317' fill='black'>
-						W
-					</text>
-					<text x='650' y='317' fill='black'>
-						E
-					</text>
-				</g>
-			</svg>
-		</div>
-	);
-};
+            <circle cx='400' cy='300' r='250' />
+          </clipPath>
+          <g clipPath='url(#circle)'>
+            <linearGradient
+              id='myGradient'
+              gradientTransform='rotate(90)'
+            >
+              <stop offset='1%' stopColor='gold' />
+              <stop offset='100%' stopColor='#ed673b' />
+            </linearGradient>
+            <circle cx='400' cy='300' r='250' fill='white' />
+            <path
+              d={path}
+              fill='#ed673b'
+              stroke='black'
+              strokeWidth='7.5'
+            />{' '}
+            {/* fill='url(#myGradient)' */}
+            <circle
+              cx='400'
+              cy='300'
+              r='250'
+              strokeWidth='15'
+              stroke='black'
+              fillOpacity='0'
+            />
+          </g>
+          <g className='text'>
+            <text x='383' y='45' fill='black'>
+              O
+            </text>
+            <text x='383' y='593' fill='black'>
+              S
+            </text>
+            <text x='100' y='317' fill='black'>
+              W
+            </text>
+            <text x='650' y='317' fill='black'>
+              E
+            </text>
+          </g>
+        </svg>
+      </div>
+    )
+  }
 
 export default AzimuthChart;
