@@ -25,10 +25,10 @@ const AzimuthChart = (props) => {
 		props.longitude
 	).azimuth;
 
-	const [y1, setY1] = useState(0);
-	const [x1, setX1] = useState(0);
-	const [y2, setY2] = useState(0);
-	const [x2, setX2] = useState(0);
+	const [y1, setY1] = useState(0)
+	const [x1, setX1] = useState(0)
+	const [y2, setY2] = useState(0)
+	const [x2, setX2] = useState(0)
 
 	useEffect(() => {
 		setY1(Math.sin((90 * Math.PI) / 180 + sunriseAzi) * 250 + 300);
